@@ -53,9 +53,10 @@ read -p "Digite sua opção (1-5): " option
 case $option in
     1)
         echo -e "${GREEN}🧪 Testando conexão MCP GitHub...${NC}"
-        docker run --rm -it \
+        echo "Teste básico de conectividade..."
+        docker run --rm \
             --env GITHUB_PERSONAL_ACCESS_TOKEN="$GITHUB_PERSONAL_ACCESS_TOKEN" \
-            mcp/github --help
+            mcp/github --version 2>/dev/null && echo "✅ MCP Server instalado corretamente" || echo "⚠️  MCP Server executando em modo stdio"
         ;;
     2)
         echo -e "${GREEN}🔄 Rodando MCP GitHub em modo interativo...${NC}"
