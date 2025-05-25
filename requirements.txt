@@ -1,0 +1,24 @@
+# Dependências básicas (sempre necessárias)
+streamlit>=1.28.0
+pillow>=10.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# Dependências para IA (opcionais)
+# Descomente conforme necessário:
+
+# Real-ESRGAN
+# py-real-esrgan>=0.4.0
+# torch>=2.0.0
+# torchvision>=0.15.0
+
+# Hugging Face
+# transformers>=4.30.0
+# diffusers>=0.20.0
+
+# Waifu2x
+# waifu2x-python>=1.0.0
+
+# Utilitários
+requests>=2.31.0
+pathlib2>=2.3.7
