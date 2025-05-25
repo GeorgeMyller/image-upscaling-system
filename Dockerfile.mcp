@@ -1,0 +1,19 @@
+FROM node:20-alpine
+
+# Instalar dependências do sistema
+RUN apk add --no-cache git
+
+# Criar diretório de trabalho
+WORKDIR /app
+
+# Instalar o servidor MCP do GitHub
+RUN npm install -g @modelcontextprotocol/server-github
+
+# Criar usuário não-root
+RUN addgroup -g 1001 -S mcp && \
+    adduser -S mcp -u 1001
+
+USER mcp
+
+# Comando padrão
+CMD ["mcp-server-github"]
